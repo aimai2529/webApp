@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おすすめ動画</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+
+    <main>
+        <section class="video">
+            <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video__thumbnail"></video>
+            <div class="video__info info">
+                <img src="./image/profile_gray.png" alt="チャンネルアイコン" class="info__icon">
+                <h2 class="info__title">
+                    【厳選】ゴッフィおもしろ場面集
+                </h2>
+                <div class="info__small">
+                    <p class="info__channelName">抹茶らて</p>
+                    <small class="info__time">1年前・30回再生</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="video">
+            <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video__thumbnail"></video>
+            <div class="video__info info">
+                <img src="./image/profile_gray.png" alt="チャンネルアイコン" class="info__icon">
+                <h2 class="info__title">
+                    【厳選】ゴッフィおもしろ場面集
+                </h2>
+                <div class="info__small">
+                    <p class="info__channelName">抹茶らて</p>
+                    <small class="info__time">1年前・30回再生</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="video">
+            <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video__thumbnail"></video>
+            <div class="video__info info">
+                <img src="./image/profile_gray.png" alt="チャンネルアイコン" class="info__icon">
+                <h2 class="info__title">
+                    【厳選】ゴッフィおもしろ場面集
+                </h2>
+                <div class="info__small">
+                    <p class="info__channelName">抹茶らて</p>
+                    <small class="info__time">1年前・30回再生</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="video">
+            <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video__thumbnail"></video>
+            <div class="video__info info">
+                <img src="./image/profile_gray.png" alt="チャンネルアイコン" class="info__icon">
+                <h2 class="info__title">
+                    【厳選】ゴッフィおもしろ場面集
+                </h2>
+                <div class="info__small">
+                    <p class="info__channelName">抹茶らて</p>
+                    <small class="info__time">1年前・30回再生</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="video">
+            <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video__thumbnail"></video>
+            <div class="video__info info">
+                <img src="./image/profile_gray.png" alt="チャンネルアイコン" class="info__icon">
+                <h2 class="info__title">
+                    【厳選】ゴッフィおもしろ場面集
+                </h2>
+                <div class="info__small">
+                    <p class="info__channelName">抹茶らて</p>
+                    <small class="info__time">1年前・30回再生</small>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <a href="index.html" class="footer__button footer__button--active">おすすめ動画</a>
+        <a href="list.html" class="footer__button">再生リスト</a>
+        <a href="setting.html" class="footer__button">設定</a>
+    </footer>
+
+    <script>
+        const video = document.querySelectorAll('.video__thumbnail');
+
+        video.forEach(obj => {
+            obj.addEventListener('click', () => {
+                window.location.href = './video.html'
+            })
+        });
+    </script>
+</body>
+
+</html>

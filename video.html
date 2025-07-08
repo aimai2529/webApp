@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画再生画面</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+
+    <main>
+        <section class="video">
+            <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video__thumbnail" controls></video>
+            <div class="video__info info">
+                <img src="./image/profile_gray.png" alt="チャンネルアイコン" class="info__icon">
+                <h2 class="info__title">
+                    【厳選】ゴッフィおもしろ場面集
+                </h2>
+                <div class="info__small">
+                    <p class="info__channelName">抹茶らて</p>
+                    <small class="info__time">1年前・30回再生</small>
+                </div>
+            </div>
+        </section>
+
+        <form class="tag">
+            <label class="tag__item">
+                <input type="checkbox">
+                あとで見る
+            </label>
+            <label class="tag__item">
+                <input type="checkbox">
+                【視聴済】推しの実況
+            </label>
+            <label class="tag__item">
+                <input type="checkbox">
+                【PS】BGMたち
+            </label>
+            <label class="tag__item">
+                <input type="checkbox">
+                落ち着いた曲
+            </label>
+            <div class="tag__new">
+                <button>+</button>
+                <p>新しいタグ</p>
+            </div>
+        </form>
+
+    </main>
+    <footer class="footer">
+        <a href="index.html" class="footer__button">おすすめ動画</a>
+        <a href="list.html" class="footer__button">再生リスト</a>
+        <a href="setting.html" class="footer__button">設定</a>
+    </footer>
+</body>
+
+</html>
