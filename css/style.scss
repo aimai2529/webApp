@@ -20,6 +20,11 @@ main {
     background-color: #fff;
     min-height: 100vh;
     padding-bottom: 60px;
+    padding-top: 30px;
+
+    &.player {
+        padding-top: 0;
+    }
 }
 
 .video {
@@ -60,6 +65,143 @@ main {
     }
 }
 
+.video-small {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+
+    &__thumbnail {
+        width: 40%;
+    }
+
+    &__info {
+        flex: 1;
+    }
+
+    &__title {
+        font-size: f-rem(14);
+        margin-bottom: 10px;
+    }
+
+    &__small {
+        font-size: f-rem(12);
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
+
+    &__item {
+        width: 60px;
+    }
+}
+
+.checkbox {
+    width: fit-content;
+    max-width: 100%;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    /* auto はアイコン、1fr はラベル文字列を想定 */
+    align-items: center;
+    gap: 6px;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #e6e6e6;
+    }
+
+    // チェックボックス全体：非活性の見た目
+    &:has(.checkbox_icon:disabled) {
+        opacity: 0.4;
+    }
+}
+
+.newTag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 0.5em 1em;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #c8c8c8;
+    }
+
+    span {
+        color: $color-main;
+    }
+}
+
+// チェックボックスのアイコン
+input[type="checkbox"] {
+    appearance: none; // ブラウザデフォルトの見た目をなくす
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    position: relative;
+    width: 1em;
+    height: 1em;
+    background: #FFFFFF;
+    border: solid 1px $color-sub;
+    border-radius: 4px;
+
+    // 強制カラーモードが有効のときは、既定の色を設定
+    @media (forced-colors: active) {
+        border-color: CanvasText;
+    }
+
+    // アイコン：選択済みの見た目
+    &:checked {
+        background: $color-accent;
+        border-color: $color-accent;
+
+        // 強制カラーモードが有効のときは、既定の色を設定
+        @media (forced-colors: active) {
+            background-color: Canvas;
+            border-color: CanvasText;
+        }
+    }
+
+    // チェックマーク
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        mask-image: url("../image/check.svg");
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        background-color: #FFFFFF;
+
+        // 強制カラーモードが有効のときは、既定の色を設定
+        @media (forced-colors: active) {
+            &::before {
+                background-color: CanvasText;
+            }
+        }
+    }
+
+    // チェックマーク：選択済みの見た目
+    &:checked::before {
+        opacity: 1;
+    }
+}
 
 .footer {
     max-width: 440px;
@@ -81,5 +223,64 @@ main {
             background-color: $color-sub;
             color: #fff;
         }
+    }
+}
+
+// video.html
+.tag {
+    padding: 0 1em;
+    margin-bottom: 30px;
+
+    &__wrapper {
+        background-color: #fefefe;
+        border: 1px solid $color-sub;
+        padding: 0.75em;
+        max-height: 150px;
+        overflow-y: auto;
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__new {
+        width: 100%;
+    }
+}
+
+.recomend {
+    width: 90%;
+    margin: 0 auto;
+
+    &__title {
+        font-size: f-rem(20);
+        margin-bottom: 15px;
+    }
+}
+
+// list.html
+.sort {
+    width: 90%;
+    margin: 0 auto 30px;
+
+    &__button {
+        width: 30px;
+    }
+}
+
+.list {
+    width: 90%;
+    margin: 0 auto 60px;
+
+    &__item {
+        padding-bottom: 30px;
+        background: url(../image/list-background.svg) no-repeat top left/contain;
+    }
+
+    &__thumbnail {
+        width: 90%;
+    }
+
+    &__title {
+        font-size: f-rem(24);
     }
 }

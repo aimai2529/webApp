@@ -11,7 +11,7 @@
 
 <body>
 
-    <main>
+    <main class="player">
         <section class="video">
             <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video__thumbnail" controls></video>
             <div class="video__info info">
@@ -26,28 +26,91 @@
             </div>
         </section>
 
+        <div class="button">
+            <button class="button__item btnPrev"><img src="./image/icon.svg" alt=""></button>
+            <button class="button__item btnPlay"><img src="./image/stop.svg" alt=""></button>
+            <button class="button__item btnNext"><img src="./image/next.svg" alt=""></button>
+        </div>
+
         <form class="tag">
-            <label class="tag__item">
-                <input type="checkbox">
-                あとで見る
-            </label>
-            <label class="tag__item">
-                <input type="checkbox">
-                【視聴済】推しの実況
-            </label>
-            <label class="tag__item">
-                <input type="checkbox">
-                【PS】BGMたち
-            </label>
-            <label class="tag__item">
-                <input type="checkbox">
-                落ち着いた曲
-            </label>
-            <div class="tag__new">
-                <button>+</button>
-                <p>新しいタグ</p>
+            <div class="tag__wrapper">
+                <label class="tag__item checkbox" for="tag1">
+                    <input type="checkbox" class="checkbox__icon" name="tag1" id="tag1" value="あとで見る">
+                    あとで見る
+                </label>
+                <label class="tag__item checkbox" for="tag2">
+                    <input type="checkbox" class="checkbox__icon" name="tag2" id="tag2" value="【視聴済】推しの実況">
+                    【視聴済】推しの実況
+                </label>
+                <label class="tag__item checkbox" for="tag3">
+                    <input type="checkbox" class="checkbox__icon" name="tag3" id="tag3" value="【PS】BGMたち">
+                    【PS】BGMたち
+                </label>
+                <label class="tag__item checkbox" for="tag4">
+                    <input type="checkbox" class="checkbox__icon" name="tag4" id="tag4" value="落ち着いた曲">
+                    落ち着いた曲
+                </label>
+                <button type="button" class="tag__new newTag">
+                    <span>+</span>
+                    <p>新しいタグ</p>
+                </button>
             </div>
         </form>
+
+        <section class="recomend">
+            <h2 class="recomend__title">
+                おすすめ動画
+            </h2>
+            <div class="video-small">
+                <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video-small__thumbnail"></video>
+                <div class="video-small__info">
+                    <h2 class="video-small__title">
+                        【厳選】ゴッフィおもしろ場面集
+                    </h2>
+                    <div class="video-small__small">
+                        <p class="video-small__channelName">抹茶らて</p>
+                        <small class="video-small__time">1年前・30回再生</small>
+                    </div>
+                </div>
+            </div>
+            <div class="video-small">
+                <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video-small__thumbnail"></video>
+                <div class="video-small__info">
+                    <h2 class="video-small__title">
+                        【厳選】ゴッフィおもしろ場面集
+                    </h2>
+                    <div class="video-small__small">
+                        <p class="video-small__channelName">抹茶らて</p>
+                        <small class="video-small__time">1年前・30回再生</small>
+                    </div>
+                </div>
+            </div>
+            <div class="video-small">
+                <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video-small__thumbnail"></video>
+                <div class="video-small__info">
+                    <h2 class="video-small__title">
+                        【厳選】ゴッフィおもしろ場面集
+                    </h2>
+                    <div class="video-small__small">
+                        <p class="video-small__channelName">抹茶らて</p>
+                        <small class="video-small__time">1年前・30回再生</small>
+                    </div>
+                </div>
+            </div>
+            <div class="video-small">
+                <video src="./【厳選】ゴッフィおもしろ場面集.mp4" class="video-small__thumbnail"></video>
+                <div class="video-small__info">
+                    <h2 class="video-small__title">
+                        【厳選】ゴッフィおもしろ場面集
+                    </h2>
+                    <div class="video-small__small">
+                        <p class="video-small__channelName">抹茶らて</p>
+                        <small class="video-small__time">1年前・30回再生</small>
+                    </div>
+                </div>
+            </div>
+
+        </section>
 
     </main>
     <footer class="footer">
@@ -55,6 +118,17 @@
         <a href="list.html" class="footer__button">再生リスト</a>
         <a href="setting.html" class="footer__button">設定</a>
     </footer>
+
+    <script>
+        const video = document.querySelectorAll('.video-small');
+
+        video.forEach(obj => {
+            obj.addEventListener('click', () => {
+                window.location.href = './video.html'
+            })
+        });
+    </script>
+
 </body>
 
 </html>
