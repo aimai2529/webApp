@@ -33,7 +33,7 @@
         </div>
 
         <form class="tag">
-            <div class="tag__wrapper">
+            <div class="tag__wrapper" id="tagWrapper">
                 <label class="tag__item checkbox" for="tag1">
                     <input type="checkbox" class="checkbox__icon" name="tag1" id="tag1" value="あとで見る">
                     あとで見る
@@ -50,7 +50,7 @@
                     <input type="checkbox" class="checkbox__icon" name="tag4" id="tag4" value="落ち着いた曲">
                     落ち着いた曲
                 </label>
-                <button type="button" class="tag__new newTag">
+                <button type="button" class="tag__new newTag" id="addTagButton">
                     <span>+</span>
                     <p>新しいタグ</p>
                 </button>
@@ -126,6 +126,31 @@
             obj.addEventListener('click', () => {
                 window.location.href = './video.html'
             })
+        });
+    </script>
+
+    <script>
+        const tagWrapper = document.getElementById('tagWrapper');
+        const addTagButton = document.getElementById('addTagButton');
+
+        let tagCount = 5; // 既存のタグが4つあるから、次は5からスタート！
+
+        addTagButton.addEventListener('click', () => {
+            const tagName = prompt("新しいタグの名前を入力してください：");
+            if (!tagName) return;
+
+            const id = `tag${tagCount++}`;
+
+            const label = document.createElement('label');
+            label.className = 'tag__item checkbox';
+            label.setAttribute('for', id);
+
+            label.innerHTML = `
+              <input type="checkbox" class="checkbox__icon" name="${id}" id="${id}" value="${tagName}">
+              ${tagName}
+            `;
+
+            tagWrapper.prepend(label);
         });
     </script>
 
